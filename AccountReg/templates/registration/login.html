@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block reveal %} {% endblock %}
+{% block header %} {% endblock %}
+
+
+{% block content %}
+<h2>You must be logged in to comment</h2>
+<form method="POST" class="form-group">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit" class="btn btn-success">Log in</button>
+    
+    <p><a href="/">Go back</a> </p>
+    <p>Forgot password? Reset<a href=""> here </a> </p>
+</form> 
+{% endblock %}

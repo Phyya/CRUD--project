@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block reveal %} {% endblock %}
+{% block header %} {% endblock %}
+
+{% block content %}
+    
+{% for post in posts %}
+    
+    <div class="post-entry">
+        <h2><a href="/post/{{post.id}}">{{ post.title }}</a></h2>
+        <p>{{post.body}}</p>
+    </div>
+{% endfor %}
+<div class="nav-right">
+    <a href="/post/new/">New Blog Post</a>
+</div>
+{%  endblock %}

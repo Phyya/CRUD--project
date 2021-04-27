@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block reveal %} {% endblock %}
+
+{% block header %} Create a new post{% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %} 
+        {{form.as_p }}
+        <input type="submit" value="save">
+    </form>
+{%  endblock %}

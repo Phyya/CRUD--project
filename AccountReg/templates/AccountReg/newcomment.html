@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block reveal %} {% endblock %}
+
+{% block header %} {% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    <h1>Write what you feel</h1>
+    <form action="" method="post">
+        {% csrf_token %} 
+        {{form.as_p }}
+        <input type="submit" value="Add comment">
+    </form>
+    
+{% else %}
+        <div class="greeting">
+            <p>You must be logged in to add a comment</p>
+            <a href="/login/">Log in</a></h1> 
+            
+        </div>
+{% endif %}
+    
+{%  endblock %}

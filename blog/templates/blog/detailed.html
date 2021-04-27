@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+
+{% block reveal %} {% endblock %}
+
+{% block header %} {% endblock %}
+
+{% block content %}
+    <div class="post-entry"  style="background-color: grey; color:white">
+        <h2>{{ posts.title }}</h2>
+        <p>{{posts.body}}</p>
+<hr>
+        <div>
+            <h2>Comments.....</h2>
+                
+                    {% for comment in posts.comments.all %} 
+                        <strong>
+                            {{ comment.name}} - {{comment.date_added}}
+                        </strong>
+                        <br>
+                        {{comment.body}}
+                    {% endfor %}
+                    <button></button><a href="/post/{{posts.id}}/comment">Add comment</a></button>
+                
+        </div>
+    </div>
+
+    <a href="/post/{{posts.id}}/edit">Edit post</a> <br>
+    <a href="/post/{{posts.id}}/delete">Delete post</a> <br>
+    <a href="/post/">Go back</a> 
+{%  endblock %}
