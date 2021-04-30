@@ -9,6 +9,4 @@ class CommentForm(forms.ModelForm):
         model = Comment
 
         fields = ['body']
-        snippets = {
-            'body':forms.Textarea(attrs={'class': 'form-control'}),
-        }
+        

@@ -42,5 +42,18 @@ class AddCommentView(CreateView):   #class-based view to add a comment
     model = Comment
     template_name = 'AccountReg/newcomment.html'
     fields = ['body']
-    #success_url = reverse_lazy('fullPost')
+    success_url = reverse_lazy('fullPost')
+
+
+    # def form_valid(self, form):
+    #     form.instance.post_id = self.kwargs['pk']
+    #     form.instance.author = request.user
+    #     #return super().form_valid(form)
+
+
+    # success_url = reverse_lazy('fullPost')
+
+
+
+
     

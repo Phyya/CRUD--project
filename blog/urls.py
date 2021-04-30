@@ -1,7 +1,12 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
 from AccountReg import views as v
-from .views import BlogCreateView, BlogUpdateView, BlogDeleteView, AddCommentView
+from .views import BlogCreateView, BlogUpdateView, BlogDeleteView,AddCommentView
+# from django.contrib.auth import views as auth_views
+
+
+
+
 
 urlpatterns = [
 path("", views.index, name='index'),

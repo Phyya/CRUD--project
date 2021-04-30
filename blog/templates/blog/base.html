@@ -7,18 +7,22 @@
      <link rel="stylesheet" href="{% static 'blog/styles.css' %} ">
 </head>
 <body>
+ {% block header %}
     <header>
-        {% block header %} <h1>WELCOME TO DJANGO BLOG. 
-            <a href="/register/">Sign up</a>
-            
+        <h1>WELCOME TO DJANGO BLOG. 
+            <button> <a href="/register/">Sign up</a></button>
+        <button><a href="/login/">Log in</a></button>
+        </h1>
+        </header>
         {% if user.is_authenticated %}
-            
+            <div class="greeting">
                 <h3>Hi {{user.username}}!</h3>
-                <a href="/logout/">LOG OUT</a>
+            <button><a href="/logout/">LOG OUT</a></button>
+            </div>
         {% else %}
         <div class="greeting">
-            <h1>You are not logged in.</h1>
-            <a href="/login/">Log in</a></h1> 
+            <h2>You are not logged in.</h2>
+             
             
         </div>
         {% endif %} 
@@ -31,12 +35,12 @@
             
         </div>
         {% endblock %}
-    </header>
+    
 
-    <div>
+    
         
             {% block content %}
             {% endblock %}
-
+        
 </body>
 </html>

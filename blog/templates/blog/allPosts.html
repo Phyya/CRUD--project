@@ -4,7 +4,9 @@
 {% block header %} {% endblock %}
 
 {% block content %}
-    
+<div class="nav-right">
+    <button><a href="/post/new/">New Blog Post</a></button>
+</div>
 {% for post in posts %}
     
     <div class="post-entry">
@@ -12,7 +14,5 @@
         <p>{{post.body}}</p>
     </div>
 {% endfor %}
-<div class="nav-right">
-    <a href="/post/new/">New Blog Post</a>
-</div>
+
 {%  endblock %}

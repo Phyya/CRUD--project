@@ -5,26 +5,31 @@
 {% block header %} {% endblock %}
 
 {% block content %}
-    <div class="post-entry"  style="background-color: grey; color:white">
+    <div class="post-entry" style="box-shadow: 5px 5px 5px blue;">
         <h2>{{ posts.title }}</h2>
         <p>{{posts.body}}</p>
 <hr>
-        <div>
+        <div style="margin-top: 100px;">
             <h2>Comments.....</h2>
-                
-                    {% for comment in posts.comments.all %} 
+            <button><a href="/post/{{posts.pk}}/comment">Add comment</a></button> <br>
+            {% if not post.comments.all %} 
+                No Comments Yet.
+            {% else %} 
+                    {% for comment in post.comments.all %} 
                         <strong>
                             {{ comment.name}} - {{comment.date_added}}
                         </strong>
                         <br>
                         {{comment.body}}
                     {% endfor %}
-                    <button></button><a href="/post/{{posts.id}}/comment">Add comment</a></button>
+            {% endif %} 
+                    
                 
         </div>
     </div>
-
-    <a href="/post/{{posts.id}}/edit">Edit post</a> <br>
-    <a href="/post/{{posts.id}}/delete">Delete post</a> <br>
-    <a href="/post/">Go back</a> 
+    <div class="btns">
+        <button><a href="/post/{{posts.id}}/edit">Edit post</a> </button>
+        <button><a href="/post/{{posts.id}}/delete">Delete post</a> </button>
+        <button><a href="/post/">Go back</a> </button>
+    </div>
 {%  endblock %}

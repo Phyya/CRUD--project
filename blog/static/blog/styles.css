@@ -1,25 +1,22 @@
 body {
-font-family:"Source Sans Pro";
-font-size:15px;
+    font-family:"Source Sans Pro";
+    font-size:15px;
 }
-header {
-    border-bottom: 1px slid #999;
-    margin-bottom: 2rem;
-    display: flex;
-}
-header h1 a {
+
+a {
     color:red;
     text-decoration:none;
 }
-.nav-left  {
-    margin-right:auto;
-    margin-top:300px;
-    background-color: black;
+header, .greeting, .nav-left, .post-entry {
+  margin:20px 400px;
+  padding:20px;
+  height:auto;
+
 }
-.nav-right {
-    /* display: flex; */
-    /* float:right; */
-    padding-top:2rem;
+
+.btns {
+    display:flex;
+    justify-content: center;
 }
 .post-entry {
     margin-bottom: 2rem;
