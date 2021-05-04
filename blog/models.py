@@ -27,4 +27,7 @@ class Comment(models.Model):
     def __str__(self):
         return 'By: %s -%s' %(self.post.name, self.body)
 
+    def get_absolute_url(self):
+        return reverse('fullPost', kwargs={"pk": self.id})
+
     
